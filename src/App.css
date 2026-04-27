@@ -1,0 +1,102 @@
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar {
+  background: var(--green-800);
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.navbar-brand-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--green-600);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  display: block;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius);
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background .15s, color .15s;
+}
+
+.navbar-links a:hover {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+}
+
+.navbar-links a.active {
+  background: var(--green-600);
+  color: #fff;
+}
+
+/* ── Page wrapper ────────────────────────────────────────── */
+.page {
+  flex: 1;
+  padding: 2.5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Welcome ─────────────────────────────────────────────── */
+.welcome-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.welcome-card h2 {
+  font-size: 1.5rem;
+  color: var(--green-800);
+  margin-bottom: 0.5rem;
+}
+
+.welcome-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}

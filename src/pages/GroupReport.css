@@ -1,0 +1,212 @@
+/* ── Card ────────────────────────────────────────────────── */
+.report-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-width: 520px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.report-card-header {
+  background: var(--green-800);
+  padding: 1.5rem 2rem;
+  color: #fff;
+}
+
+.report-card-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.report-card-header p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,.7);
+}
+
+.report-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Form fields ─────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.field input[type="date"],
+.field input[type="number"] {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+}
+
+.field input[type="date"]:focus,
+.field input[type="number"]:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(82,183,136,.2);
+}
+
+/* ── Date range row ──────────────────────────────────────── */
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Error alert ─────────────────────────────────────────── */
+.alert-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: var(--radius);
+  color: var(--error);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.alert-error-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 1px;
+}
+
+/* ── Submit button ───────────────────────────────────────── */
+.btn-generate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  color: #fff;
+  background: var(--green-700);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .15s, transform .1s, box-shadow .15s;
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.25rem;
+}
+
+.btn-generate:hover:not(:disabled) {
+  background: var(--green-800);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-generate:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-generate:disabled {
+  background: var(--green-600);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* ── Spinner ─────────────────────────────────────────────── */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Radio group ─────────────────────────────────────────── */
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.radio-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+  user-select: none;
+}
+
+.radio-option:has(input:checked) {
+  border-color: var(--border-focus);
+  background: var(--green-50);
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-option span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.radio-option small {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+}
+
+/* ── Field hint ──────────────────────────────────────────── */
+.field-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .date-row {
+    grid-template-columns: 1fr;
+  }
+  .report-card-body {
+    padding: 1.5rem;
+  }
+  .report-card-header {
+    padding: 1.25rem 1.5rem;
+  }
+}
